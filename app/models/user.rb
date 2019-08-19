@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :skis, foreign_key: :owner_id
   has_many :transactions
+
+  validates :name, presence: true
 end
