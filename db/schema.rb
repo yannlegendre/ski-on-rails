@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_19_102335) do
+ActiveRecord::Schema.define(version: 2019_08_19_121207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "skis", force: :cascade do |t|
+    t.string "photo"
+    t.integer "price"
+    t.integer "taille"
+    t.string "model"
+    t.bigint "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_skis_on_owner_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "ski_id"
+    t.bigint "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_transactions_on_customer_id"
+    t.index ["ski_id"], name: "index_transactions_on_ski_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,4 +48,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_102335) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "skis", "users", column: "owner_id"
+  add_foreign_key "transactions", "skis"
+  add_foreign_key "transactions", "users", column: "customer_id"
 end
