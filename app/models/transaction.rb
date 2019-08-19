@@ -4,4 +4,5 @@ class Transaction < ApplicationRecord
 
   validates :customer, presence: true
   validates :ski, presence: true
+  validates :rentalDate, presence: true, uniqueness: { scope: :ski }
 end
