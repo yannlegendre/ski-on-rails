@@ -5,5 +5,4 @@ Rails.application.routes.draw do
 
   root to: 'skis#search'
 
-
 end
