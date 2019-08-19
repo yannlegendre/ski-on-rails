@@ -21,7 +21,7 @@ end
   photo = 'coucou'
   price = rand(200..600)
   owner = User.all.sample
-  model = ['Rossignol', 'Salomon', 'Head']
+  model = ['Rossignol', 'Salomon', 'Head'].sample
   size = rand(50..250)
   city = ['Lyon', 'Milano', 'Paris', 'Bruxelles'].sample
   Ski.create!(photo: photo, price: price, model: model, size: size, owner: owner, city: city)

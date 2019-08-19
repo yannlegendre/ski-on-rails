@@ -1,0 +1,14 @@
+<h1>Results</h1>
+
+<% @skis.each do |ski| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <span><%= ski.model %></span>
+        <span><%= ski.price %></span>
+        <span><%= ski.size %></span>
+        <span><%= ski.city %></span>
+      </div>
+    </div>
+  </div>
+<% end %>
