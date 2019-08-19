@@ -7,4 +7,5 @@ class Ski < ApplicationRecord
   validates :model, presence: true
   validates :owner, presence: true
   validates :size, presence: true, numericality: { only_integer: true }
+  validates :city, presence: true
 end
