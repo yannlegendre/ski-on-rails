@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'skis#search'
 
   resources :skis, only: [:index, :create, :show, :new] do
-  resources :transactions, only: [:new, :create, :show]
+  resources :transactions, only: [:new, :create]
     end
   resources :transactions, only: [:show]
 end

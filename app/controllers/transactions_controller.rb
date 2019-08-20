@@ -6,14 +6,15 @@ class TransactionsController < ApplicationController
   end
 
   def create
+    p params
     @transaction = Transaction.new(transaction_params)
     @ski = Ski.find(params[:ski_id])
     @transaction.ski = @ski
     @transaction.customer = current_user
     if @transaction.save
-      redirect_to ski_transaction_path(@ski, @transaction)
+      redirect_to transaction_path(@transaction)
     else
-      render 'skis/show'
+      render :new
     end
   end
 
