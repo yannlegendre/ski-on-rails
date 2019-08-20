@@ -26,3 +26,7 @@ PhotoUploader::IMG_IDS.each do |img_id|
   Ski.create!(photo: photo, price: price, model: model, size: size, owner: owner, city: city)
 end
 
+Transaction.create!(ski: Ski.take, customer: User.take, rental_date: 3.days.from_now)
+Transaction.create!(ski: Ski.take, customer: User.take, rental_date: 4.days.from_now)
+Transaction.create!(ski: Ski.take, customer: User.take, rental_date: 6.days.from_now)
+

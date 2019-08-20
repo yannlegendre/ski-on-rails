@@ -1,5 +1,5 @@
 class SkisController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :search]
+  skip_before_action :authenticate_user!, only: [:index]
   def search
   end
 
