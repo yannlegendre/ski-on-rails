@@ -13,9 +13,21 @@ class SkisController < ApplicationController
 
   end
 
-  def create
+  def new
+    @ski = Ski.new
   end
 
-  def new
+  def create
+    @ski = Ski.new(ski_params)
+    @ski.owner = current_user
+    if @ski.save
+      redirect_to ski_path(@ski)
+    else
+      render :new
+    end
   end
 end
+
+  def ski_params
+    params.require(:ski).permit(:price, :size, :model, :city, :photo)
+  end
