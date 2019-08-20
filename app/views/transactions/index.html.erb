@@ -1,0 +1,9 @@
+<h1>Vos transactions</h1>
+  <% @transactions.each do |transaction| %>
+    <h4> <%= transaction.ski.owner.name %> </h4>
+    <p> <%= transaction.ski.model %> </p>
+    <p> <%= transaction.ski.city %> </p>
+    <p> <%= cl_image_tag transaction.ski.photo, height: 300, width: 400 %> </p>
+    <p> <%= transaction.ski.size %> cm </p>
+    <p> <%= transaction.ski.price %> € </p>
+<% end %>
