@@ -16,6 +16,7 @@ class SkisController < ApplicationController
     @ski = Ski.new
   end
 
+
   def create
     @ski = Ski.new(ski_params)
     @ski.owner = current_user
