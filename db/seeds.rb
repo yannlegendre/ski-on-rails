@@ -9,12 +9,20 @@
 
 User.destroy_all
 
+p 'Data destroyed'
+
+#create user seeds
 20.times do
   name = Faker::Superhero.name
   email = Faker::Internet.email
   password = 'password'
   User.create(name: name, email: email, password: password)
 end
+
+#special user toto, toto@gmail.com with pasword 'password'
+User.create(name: 'toto', email: 'toto@gmail.com', password: 'azerty')
+
+p 'Users created with toto, toto@gmail.com password : azerty'
 
 PhotoUploader::IMG_IDS.each do |img_id|
   photo = Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566297127/#{img_id}.jpg")
@@ -26,7 +34,10 @@ PhotoUploader::IMG_IDS.each do |img_id|
   Ski.create!(photo: photo, price: price, model: model, size: size, owner: owner, city: city)
 end
 
+p 'Skis created'
+
 Transaction.create!(ski: Ski.take, customer: User.take, rental_date: 3.days.from_now)
 Transaction.create!(ski: Ski.take, customer: User.take, rental_date: 4.days.from_now)
 Transaction.create!(ski: Ski.take, customer: User.take, rental_date: 6.days.from_now)
 
+p 'Transactions created'
