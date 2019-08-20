@@ -10,12 +10,12 @@ class SkisController < ApplicationController
 
   def show
     @ski = Ski.find(params[:id])
-
   end
 
   def new
     @ski = Ski.new
   end
+
 
   def create
     @ski = Ski.new(ski_params)
@@ -26,8 +26,10 @@ class SkisController < ApplicationController
       render :new
     end
   end
-end
+
+   private
 
   def ski_params
     params.require(:ski).permit(:price, :size, :model, :city, :photo)
   end
+end
