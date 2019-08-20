@@ -6,7 +6,6 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    p params
     @transaction = Transaction.new(transaction_params)
     @ski = Ski.find(params[:ski_id])
     @transaction.ski = @ski
