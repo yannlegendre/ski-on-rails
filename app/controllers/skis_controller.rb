@@ -10,12 +10,25 @@ class SkisController < ApplicationController
 
   def show
     @ski = Ski.find(params[:id])
-
-  end
-
-  def create
   end
 
   def new
+    @ski = Ski.new
+  end
+
+  def create
+    @ski = Ski.new(ski_params)
+    @ski.owner = current_user
+    if @ski.save
+      redirect_to ski_path(@ski)
+    else
+      render :new
+    end
+  end
+
+   private
+
+  def ski_params
+    params.require(:ski).permit(:price, :size, :model, :city, :photo)
   end
 end
