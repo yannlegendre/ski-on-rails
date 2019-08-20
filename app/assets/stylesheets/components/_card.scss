@@ -15,26 +15,31 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+  opacity: 0.85;
 }
 
+
+.card-trip:hover > img {
+  opacity: 1;
+}
 .card-trip h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: $primary;
 }
 
 .card-trip-pricing h2 {
   text-align: right;
 }
 
-.card-trip-infos a:link, a:hover {
+.card-trip-infos a:link, a:hover  {
    text-decoration: none;
 }
 
 
 .card-trip  {
   font-size: 16px;
-  opacity: .7;
   margin: 0;
 }
 
