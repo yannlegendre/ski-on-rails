@@ -2,7 +2,14 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 12;
+//   a {
+//     &:hover {
+//       text-decoration: none;
+// }
+//   }
 }
+
 
 .card-trip > img {
   height: 200px;
@@ -30,6 +37,7 @@
 .model {
   font-size:16px;
   font-weight: bold;
+  color: #333D42;
 }
 
 .card-trip .card-trip-infos {
@@ -49,9 +57,4 @@
 h1 {
   text-align: center;
   color: #484848;
-}
-
-
-.model {
-  color: #460479;
 }
