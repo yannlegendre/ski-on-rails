@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_132825) do
     t.bigint "customer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "rental_date"
+    t.date "rentalDate"
     t.index ["customer_id"], name: "index_transactions_on_customer_id"
     t.index ["ski_id"], name: "index_transactions_on_ski_id"
   end
