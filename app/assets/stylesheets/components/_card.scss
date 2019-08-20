@@ -27,17 +27,28 @@
   text-align: right;
 }
 
+.card-trip-infos a:link, a:hover {
+   text-decoration: none;
+}
 
-.card-trip p {
-  font-size: 12px;
+
+.card-trip  {
+  font-size: 16px;
   opacity: .7;
   margin: 0;
 }
 
-.model {
-  font-size:16px;
+.model  {
+  margin: 0px;
+  font-size: 16px;
   font-weight: bold;
-  color: #333D42;
+  color: #BF8F56;
+}
+
+
+.size  {
+  font-size: 16px;
+  color:#333333;
 }
 
 .card-trip .card-trip-infos {
