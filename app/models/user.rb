@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :skis, foreign_key: :owner_id
-  has_many :transactions
+  has_many :skis, foreign_key: :owner_id, dependent: :destroy
+  has_many :transactions, foreign_key: :customer_id, dependent: :destroy
 
   validates :name, presence: true
 end

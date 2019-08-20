@@ -1,6 +1,8 @@
 class Ski < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   belongs_to :owner, class_name: 'User'
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
 
   validates :photo, presence: true
   validates :price, presence: true, numericality: { only_integer: true }
