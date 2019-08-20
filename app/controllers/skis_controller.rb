@@ -1,5 +1,5 @@
 class SkisController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :search]
+  skip_before_action :authenticate_user!, only: [:index, :search, :show]
   def search
   end
 
@@ -9,6 +9,8 @@ class SkisController < ApplicationController
   end
 
   def show
+    @ski = Ski.find(params[:id])
+
   end
 
   def create
