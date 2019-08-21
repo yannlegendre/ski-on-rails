@@ -13,7 +13,7 @@ class TransactionsController < ApplicationController
     if @transaction.save
       redirect_to transaction_path(@transaction)
     else
-      render :new
+      render "skis/show"
     end
   end
 
@@ -25,10 +25,6 @@ class TransactionsController < ApplicationController
   def show
 
   end
-
-  def start_time
-   self.ski.start_date.to_datetime
- end
 
   private
 
