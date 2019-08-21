@@ -26,6 +26,10 @@ class TransactionsController < ApplicationController
 
   end
 
+  def start_time
+   self.ski.start_date.to_datetime
+ end
+
   private
 
   def transaction_params

@@ -67,7 +67,6 @@ v</p>
     </div>
     <h2 class="card-trip-pricing"><%= @ski.price %>€</h2>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-    <%= link_to 'Réserver', new_ski_transaction_path(@ski), class: "btn btn-primary" %>
   </div>
 </div>
 
@@ -79,10 +78,10 @@ v</p>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :rental_date %>
+    <%= f.input :rental_date, as: :string %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+   <%= f.button :submit,'Réserver ce ski'  %>
   </div>
 <% end  %>

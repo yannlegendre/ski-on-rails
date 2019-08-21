@@ -7,7 +7,6 @@ class SkisController < ApplicationController
     #before we create the actual form, we test the filtering thing "a la mano"
     @skis = Ski.all
     # where.(city: 'Lyon').sort_by { |ski| ski.size }
-
   end
 
   def show
@@ -29,6 +28,11 @@ class SkisController < ApplicationController
     else
       render :new
     end
+  end
+
+  def ski_booked
+    @ski = Ski.find(params[:id])
+    @ski.transaction.rental_date
   end
 
    private
