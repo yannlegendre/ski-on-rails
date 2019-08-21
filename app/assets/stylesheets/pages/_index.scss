@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 
+
 .container-index-ski {
   display: flex;
   justify-content:center;
@@ -14,7 +15,6 @@
 .container-index-ski .bigrow {
   flex-grow: 1 1;
 }
-
 
 
 .container-index-ski #map {
@@ -31,5 +31,4 @@
   padding-left:8px;
   padding-right:8px;
 }
-
 

@@ -1,7 +1,8 @@
 
 import flatpickr from "flatpickr";
 import 'flatpickr/dist/flatpickr.min.css'
-
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();
 
 const calendar = document.querySelector('#calendar')
 const datesBooked = calendar.dataset.datesBooked
