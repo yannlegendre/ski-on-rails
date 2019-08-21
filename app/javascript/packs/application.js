@@ -8,7 +8,7 @@ const datesBooked = calendar.dataset.datesBooked
 flatpickr("#transaction_rental_date",
 {
   minDate: "today",
-  disable: [datesBooked],
+  disable: JSON.parse(datesBooked),
   dateFormat: "d-m-Y"
 });
 
