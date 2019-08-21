@@ -1,10 +1,50 @@
-<h1>Vos transactions</h1>
-  <% @transactions.each do |transaction| %>
-    <h4> <%= transaction.ski.owner.name %> </h4>
-    <p> <%= transaction.ski.model %> </p>
-    <p> <%= transaction.ski.city %> </p>
-    <p> <%= cl_image_tag transaction.ski.photo, height: 300, width: 400 %> </p>
-    <p> <%= transaction.ski.size %> cm </p>
-    <p> <%= transaction.ski.price %> € </p>
-    <p> <%= transaction.rental_date %></p>
-<% end %>
+<h1>Détails de vos commandes 🙏 </h1>
+
+<div class="container">
+  <div class="list-as-customer">
+    <h2 class="font-italic">Les skis que vous avez chopé </h2>
+
+    <% if @transactions.size.nil? %>
+      <p>Vous n'avez chopé aucun ski 😢</p>
+    <% else %>
+      <% @transactions.each do |transaction| %>
+          <div class="card-product">
+            <%= cl_image_tag transaction.ski.photo %>
+            <div class="card-product-infos">
+              <p> "<strong><%= transaction.ski.model %></strong>" loué par <%= transaction.ski.owner.name %> </p>
+              <p> Le <%= transaction.rental_date %> à <%= transaction.ski.city %></p>
+              <p> Vous avez été facturé <%= transaction.ski.price %> € </p>
+            </div>
+          </div>
+          <br>
+      <% end %>
+    <% end %>
+  </div>
+
+  <hr>
+
+  <div class="list-as-owner">
+    <h2 class="font-italic">Les skis que vous avez proposé </h2>
+    <% if @transactions.size.nil? %>
+      <p>Vous n'avez proposé aucun ski 😢</p>
+    <% else %>
+
+    <% @skis.each do |ski| %>
+      <% ski.transactions.each do |transaction| %>
+          <div class="card-product">
+            <%= cl_image_tag transaction.ski.photo %>
+            <div class="card-product-infos">
+              <p> "<strong><%= transaction.ski.model %></strong>" loué à <%= transaction.customer.name %> </p>
+              <p> Le <%= transaction.rental_date %> à <%= transaction.ski.city %></p>
+              <p> <%= transaction.customer.name %> vous a réglé <%= transaction.ski.price %> € ✔ </p>
+              <br>
+            </div>
+          </div>
+          <br>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+
+</div>
