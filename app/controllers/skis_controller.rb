@@ -11,6 +11,8 @@ class SkisController < ApplicationController
 
   def show
     @ski = Ski.find(params[:id])
+    # modifs pour afficher le formulaire de reservation dans le show
+    @transaction = Transaction.new
   end
 
   def new
