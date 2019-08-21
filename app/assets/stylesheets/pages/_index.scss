@@ -1,2 +1,35 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container {
+  display: flex;
+  justify-content:center;
+  margin: auto;
+  padding:0;
+  // margin-left: 8px;
+  // margin-right: 8px;
+
+}
+
+.container .bigrow {
+  flex-grow: 1 1;
+}
+
+
+
+.container #map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.bigrow {
+  padding-right:8px;
+}
+
+#map {
+  padding-left:8px;
+  padding-right:8px;
+}
+
+
