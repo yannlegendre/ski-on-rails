@@ -6,10 +6,14 @@ class SkisController < ApplicationController
   def index
     #before we create the actual form, we test the filtering thing "a la mano"
     @skis = Ski.all
+    # where.(city: 'Lyon').sort_by { |ski| ski.size }
+
   end
 
   def show
     @ski = Ski.find(params[:id])
+    # modifs pour afficher le formulaire de reservation dans le show
+    @transaction = Transaction.new
   end
 
   def new
