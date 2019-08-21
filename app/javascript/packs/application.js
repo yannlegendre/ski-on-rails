@@ -1,7 +1,8 @@
 
 import flatpickr from "flatpickr";
 import 'flatpickr/dist/flatpickr.min.css'
-
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();
 
 flatpickr("#transaction_rental_date", {minDate: "today"});
 
