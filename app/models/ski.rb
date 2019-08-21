@@ -24,7 +24,5 @@ class Ski < ApplicationRecord
   #   transactions.map(rental_date).to_json
   # end
 end
-
-
 # array.map {|e| e.method }
 # array.map(&:method)
