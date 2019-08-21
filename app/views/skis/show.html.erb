@@ -26,6 +26,8 @@
     <%= f.input :rental_date, as: :string, placeholder: "Choisissez une date" %>
   </div>
 
+  <%= @ski.dates_booked %>
+
   <div class="form-actions">
    <%= f.button :submit,'Réserver ce ski'  %>
   </div>

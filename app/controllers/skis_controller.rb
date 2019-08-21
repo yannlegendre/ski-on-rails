@@ -30,11 +30,6 @@ class SkisController < ApplicationController
     end
   end
 
-  def ski_booked
-    @ski = Ski.find(params[:id])
-    @ski.transaction.rental_date
-  end
-
    private
 
   def ski_params
