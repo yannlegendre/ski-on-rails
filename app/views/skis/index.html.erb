@@ -1,25 +1,36 @@
 <h1><i class="fas fa-skiing"></i> Results</h1>
 
-
-
 <div class="container">
-  <div class="row">
-    <% @skis.each do |ski| %>
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2 mb-md-3">
-      <%= link_to ski_path(ski) do %>
-      <div class="card-trip">
-        <%= cl_image_tag ski.photo, height: 300, width: 400, crop: :fill %>
-        <div class="card-trip-infos">
-          <div>
-            <p class="size"><strong><%= ski.size %> cm</strong></p>
-            <p class="model"><%= ski.model %></ <p>
-          <!--   <p><%= ski.city %></p> -->
+  <div class="bigrow">
+    <div class="cards">
+      <% @skis.each do |ski| %>
+          <%= link_to ski_path(ski) do %>
+          <div class="card-trip">
+            <%= cl_image_tag ski.photo, height: 300, width: 400, crop: :fill %>
+            <div class="card-trip-infos">
+              <div>
+                <p class="size"><strong><%= ski.size %> cm</strong></p>
+                <p class="model"><%= ski.model %></ <p>
+              </div>
+              <h2 class="card-trip-pricing"><%= ski.price %>€</h2>
+            </div>
           </div>
-          <h2 class="card-trip-pricing"><%= ski.price %>€</h2>
-        </div>
-      </div>
+          <% end %>
       <% end %>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
+
     </div>
-    <% end %>
-  </div>
+   </div>
+   <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.346,48.8595,11.72,0,0/600x1000?access_token=pk.eyJ1IjoiYW50aG9ueWxudCIsImEiOiJjanl0dXV4YzAwN2psM2JwOHVwemVnMG9nIn0.JQX_fKXFJ13g0ffTXeOvRw
+      '>
 </div>
