@@ -11,5 +11,4 @@ flatpickr("#transaction_rental_date",
   disable: [datesBooked],
   dateFormat: "d-m-Y"
 });
-console.log(datesBooked)
 
