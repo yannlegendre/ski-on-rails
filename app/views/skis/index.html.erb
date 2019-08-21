@@ -4,18 +4,21 @@
   <div class="bigrow">
     <div class="cards-index">
       <% @skis.each do |ski| %>
-          <%= link_to ski_path(ski) do %>
+
           <div class="card-trip">
+            <%= link_to ski_path(ski) do %>
             <%= cl_image_tag ski.photo, height: 300, width: 400, crop: :fill %>
             <div class="card-trip-infos">
               <div>
                 <p class="size"><strong><%= ski.size %> cm</strong></p>
                 <p class="model"><%= ski.model %></ <p>
+
               </div>
-              <h2 class="card-trip-pricing"><%= ski.price %>€</h2>
+                <h2 class="card-trip-pricing"><%= ski.price %>€</h2>
             </div>
+            <% end %>
           </div>
-          <% end %>
+
       <% end %>
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nihil quidem quibusdam accusantium tempore, perspiciatis architecto, obcaecati tenetur nobis perferendis impedit dolores laudantium sed culpa eaque asperiores aut quod ut.</p>
