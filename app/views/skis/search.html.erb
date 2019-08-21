@@ -1,41 +1,23 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
-  <div class="container">
-    <a class="navbar-brand" href="#">Start Bootstrap</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <%= link_to "lien temporaire vers la vue index", skis_path %>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<!-- Page Content -->
-<div class="container">
-  <div class="card border-0 shadow my-5">
-    <div class="card-body p-5">
-      <h1 class="font-weight-light">Fixed Full Page Background Image</h1>
-      <p class="lead">In this snippet, the background image is fixed to the body element. Content on the page will scroll, but the image will remain in a fixed position!</p>
-      <p class="lead">Scroll down...</p>
-      <div style="height: 700px"></div>
-      <p class="lead mb-0">You've reached the end!</p>
-    </div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "caroussel3.jpg", alt: "alttext" %>);">
+  <div class="container">
+    <h1><strong>Skis on Rails</strong></h1>
+    <p>Best Way to rent your skis.</p>
+    <button type="button" class="btn btn-primary btn-lg">Our Skis</button>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="https://github.com"><i class="fab fa-github"></i></a>
+    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+    <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
+    <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    suivez nous sur les réseaux sociaux
   </div>
 </div>
