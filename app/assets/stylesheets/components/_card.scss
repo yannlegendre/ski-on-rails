@@ -10,7 +10,7 @@
 //   }
 }
 
-.card-trip > img {
+.card-trip img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -54,8 +54,8 @@
 .model  {
   margin: 0px;
   font-size: 16px;
-  font-weight: bold;
-  color: #BF8F56;
+  font-weight: light;
+  color: #888888;
 }
 
 .card-trip-infos {
@@ -85,7 +85,7 @@
 
 .card-product {
   overflow: hidden;
-  height: 150px;
+  height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -115,3 +115,15 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+
+.list-as-customer, .list-as-owner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .card-product {
+    width: 70%;
+  }
+}
+

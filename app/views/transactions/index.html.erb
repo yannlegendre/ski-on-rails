@@ -4,7 +4,7 @@
   <div class="list-as-customer">
     <h2 class="font-italic">Les skis que vous avez chopé </h2>
 
-    <% if @transactions.size.nil? %>
+    <% if @transactions.size.zero? %>
       <p>Vous n'avez chopé aucun ski 😢</p>
     <% else %>
       <% @transactions.each do |transaction| %>
@@ -25,8 +25,8 @@
 
   <div class="list-as-owner">
     <h2 class="font-italic">Les skis que vous avez proposé </h2>
-    <% if @transactions.size.nil? %>
-      <p>Vous n'avez proposé aucun ski 😢</p>
+    <% if @transactions.size.zero? %>
+      <p>Vous n'avez proposé aucun ski à la location 😢</p>
     <% else %>
 
     <% @skis.each do |ski| %>
@@ -45,6 +45,4 @@
       <% end %>
     <% end %>
   </div>
-
-
 </div>
