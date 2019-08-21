@@ -19,7 +19,8 @@
 
 .cards-index {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto;
   gap: 16px;
 }
 
@@ -31,10 +32,13 @@
   font-weight: bold;
   margin: 0;
   color: $primary;
+  display: flex;
+  align-items: flex-start;
 }
 
 .card-trip-pricing h2 {
-  text-align: right;
+  text-align: top;
+
 }
 
 .card-trip-infos a:link, a:hover  {
@@ -67,7 +71,7 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  // align-items: flex-end;
   position: relative;
 }
 
@@ -78,17 +82,6 @@
   width: 40px;
 }
 
-@media (max-width: 900px) {
-  .cards-index {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
-  .cards-index {
-    grid-template-columns: 1fr;
-  }
-}
 
 .card-product {
   overflow: hidden;
