@@ -19,6 +19,7 @@ class TransactionsController < ApplicationController
 
   def index
     @transactions = current_user.transactions
+    @skis = current_user.skis
   end
 
   def show
