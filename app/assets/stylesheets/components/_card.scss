@@ -10,7 +10,7 @@
 //   }
 }
 
-.card-trip > img {
+.card-trip img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -54,8 +54,8 @@
 .model  {
   margin: 0px;
   font-size: 16px;
-  font-weight: bold;
-  color: #BF8F56;
+  font-weight: light;
+  color: #888888;
 }
 
 .card-trip-infos {
