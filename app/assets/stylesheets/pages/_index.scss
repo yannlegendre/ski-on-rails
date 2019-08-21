@@ -1,7 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.container {
+.container-index-ski {
   display: flex;
   justify-content:center;
   margin: auto;
@@ -11,13 +11,13 @@
 
 }
 
-.container .bigrow {
+.container-index-ski .bigrow {
   flex-grow: 1 1;
 }
 
 
 
-.container #map {
+.container-index-ski #map {
   height: 100vh;
   position: sticky;
   top: 0;

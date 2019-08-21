@@ -17,7 +17,7 @@
   opacity: 0.85;
 }
 
-.cards {
+.cards-index {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
@@ -79,16 +79,17 @@
 }
 
 @media (max-width: 900px) {
-  .cards {
+  .cards-index {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 576px) {
-  .cards {
+  .cards-index {
     grid-template-columns: 1fr;
   }
-=======
+}
+
 .card-product {
   overflow: hidden;
   height: 150px;
@@ -120,5 +121,4 @@
 
 .card-product .card-product-infos {
   padding: 16px;
-
 }
