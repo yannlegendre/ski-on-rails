@@ -6,6 +6,7 @@ class Transaction < ApplicationRecord
   validates :ski, presence: true
   validates :rental_date, presence: true, uniqueness: { scope: :ski }
 
+  #ca fait la meme chose que les 2 methodes current et future
   scope :past, -> { where("rental_date < ?", Date.today) }
 
   def self.current
