@@ -1,0 +1,17 @@
+.container-intermediaire {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.list-as-customer, .list-as-owner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .card-product {
+    width: 520px;
+  }
+
+}
+
