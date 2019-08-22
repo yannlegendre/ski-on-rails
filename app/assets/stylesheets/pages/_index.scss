@@ -1,12 +1,11 @@
 // Import page-specific CSS files here.
-
+@import "login";
 @import "show_ski";
-
 @import "index_transactions";
 @import "ski_new";
-
 @import "banner_home";
 @import "footer_home";
+
 
 .container-index-ski {
   display: flex;
