@@ -8,6 +8,7 @@ Rails.start();
 
 const banner = document.querySelector('#banner-typed-text');
 if (banner) {
+  console.log('je suis la')
   loadDynamicBannerText();
 }
 
