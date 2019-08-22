@@ -18,7 +18,23 @@ class Ski < ApplicationRecord
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
 
+  scope :available_at, -> (date) do
+    where("id NOT IN (SELECT ski_id FROM transactions WHERE transactions.rental_date = ?)", date)
+  end
+
   def dates_booked
     transactions.pluck(:rental_date).to_json
+  end
+
+  def past_transactions
+    transactions.where("rental_date < #{Date.today}")
+  end
+
+  def current_transactions
+    transactions.where("rental_date == #{Date.today}")
+  end
+
+  def future_transactions
+    transactions.where("rental_date > #{Date.today}")
   end
 end
