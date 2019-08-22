@@ -18,6 +18,7 @@ class TransactionsController < ApplicationController
   end
 
   def index
+    @earning_transactions = current_user.earning_transactions
     @transactions = current_user.transactions
     @skis = current_user.skis
   end

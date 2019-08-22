@@ -1,51 +1,148 @@
 <h1>Détails de vos commandes 🙏 </h1>
 
 <div class="container">
-  <div class="list-as-customer">
-
-    <h2 class="font-italic">Les skis que vous avez chopé </h2>
-
-    <% if @transactions.size.zero? %>
-      <p>Vous n'avez chopé aucun ski 😢</p>
-    <% else %>
-      <% @transactions.each do |transaction| %>
-          <div class="card-product">
-            <%= cl_image_tag transaction.ski.photo %>
-            <div class="card-product-infos">
-              <p> "<strong><%= transaction.ski.model %></strong>" loué par <%= transaction.ski.owner.name %> </p>
-              <p> Le <%= transaction.rental_date %> à <%= transaction.ski.city %></p>
-              <p> Vous avez été facturé <%= transaction.ski.price %> € </p>
-            </div>
+  <div class="current-transactions">
+    <h2>Vos locations du jour</h2>
+    <br>
+    <div class="container-intermediaire">
+      <div class="list-as-customer">
+        <h3 class="font-italic">Les skis que vous avez chopé </h3>
+        <% if @transactions.current.empty? %>
+        <p>Vous n'avez chopé aucun ski 😢</p>
+        <% else %>
+        <% @transactions.current.each do |transaction| %>
+        <div class="card-product">
+          <%= cl_image_tag transaction.ski.photo %>
+          <div class="card-product-infos">
+            <p> "<strong><%= transaction.ski.model %></strong>" loué par <%= transaction.ski.owner.name %> </p>
+            <p> Le <%= transaction.rental_date %> à <%= transaction.ski.city %></p>
+            <p> Vous avez été facturé <%= transaction.ski.price %> € </p>
           </div>
-          <br>
-      <% end %>
-    <% end %>
-
-
-  </div>
-
-  <hr>
-
-  <div class="list-as-owner">
-    <h2 class="font-italic">Les skis que vous avez proposé </h2>
-    <% if @transactions.size.zero? %>
-      <p>Vous n'avez proposé aucun ski à la location 😢</p>
-    <% else %>
-
-    <% @skis.each do |ski| %>
-      <% ski.transactions.each do |transaction| %>
-          <div class="card-product">
-            <%= cl_image_tag transaction.ski.photo %>
-            <div class="card-product-infos">
-              <p> "<strong><%= transaction.ski.model %></strong>" loué à <%= transaction.customer.name %> </p>
-              <p> Le <%= transaction.rental_date %> à <%= transaction.ski.city %></p>
-              <p> <%= transaction.customer.name %> vous a réglé <%= transaction.ski.price %> € ✔ </p>
-              <br>
-            </div>
-          </div>
-          <br>
+        </div>
+        <br>
         <% end %>
-      <% end %>
-    <% end %>
+        <% end %>
+      </div>
+      <div class="list-as-owner">
+        <h3 class="font-italic">Les skis que vous avez proposé </h3>
+        <% if @earning_transactions.current.empty? %>
+        <p>Vous n'avez proposé aucun ski à la location 😢</p>
+        <% else %>
+
+
+        <% @earning_transactions.current.each do |transaction| %>
+        <div class="card-product">
+          <%= cl_image_tag transaction.ski.photo %>
+          <div class="card-product-infos">
+            <p> "<strong><%= transaction.ski.model %></strong>" loué à <%= transaction.customer.name %> </p>
+            <p> Le <%= transaction.rental_date %> à <%= transaction.ski.city %></p>
+            <p> <%= transaction.customer.name %> vous a réglé <%= transaction.ski.price %> € ✔ </p>
+            <br>
+          </div>
+        </div>
+        <br>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <div class="future-transactions">
+    <h2>Vos locations réservées</h2>
+    <br>
+    <div class="container-intermediaire">
+      <div class="list-as-customer">
+        <h3 class="font-italic">Les skis que vous avez reservé </h3>
+        <% if @transactions.future.empty? %>
+        <p>Vous n'avez reservé aucun ski 😢</p>
+        <% else %>
+        <% @transactions.future.each do |transaction| %>
+        <div class="card-product">
+          <%= cl_image_tag transaction.ski.photo %>
+          <div class="card-product-infos">
+            <p> "<strong><%= transaction.ski.model %></strong>" loué par <%= transaction.ski.owner.name %> </p>
+            <p> Le <%= transaction.rental_date %> à <%= transaction.ski.city %></p>
+            <p> Vous avez été facturé <%= transaction.ski.price %> € </p>
+          </div>
+        </div>
+        <br>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="list-as-owner ">
+        <h3 class="font-italic">Les skis que vous allez proposer </h3>
+        <% if @earning_transactions.future.empty? %>
+          <p>Personne n'a reservé vos skis pour l'instant 😢</p>
+        <% else %>
+        <% @earning_transactions.future.each do |transaction| %>
+        <div class="card-product">
+          <%= cl_image_tag transaction.ski.photo %>
+          <div class="card-product-infos">
+            <p> "<strong><%= transaction.ski.model %></strong>" loué à <%= transaction.customer.name %> </p>
+            <p> Le <%= transaction.rental_date %> à <%= transaction.ski.city %></p>
+            <p> <%= transaction.customer.name %> vous a réglé <%= transaction.ski.price %> € ✔ </p>
+            <br>
+          </div>
+        </div>
+        <br>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+  <hr>
+  <br>
+
+  <div class="archives-transactions">
+    <h2>Historique de vos locations</h2>
+    <br>
+    <div class="container-intermediaire">
+      <div class="list-as-customer">
+        <h3 class="font-italic">Les skis que vous avez reservé </h3>
+        <% if @transactions.past.empty? %>
+        <p>Vous n'avez j  amais reservé de skis 😢</p>
+        <% else %>
+        <% @transactions.past.each do |transaction| %>
+        <div class="card-product">
+          <%= cl_image_tag transaction.ski.photo %>
+          <div class="card-product-infos">
+            <p> "<strong><%= transaction.ski.model %></strong>" loué par <%= transaction.ski.owner.name %> </p>
+            <p> Le <%= transaction.rental_date %> à <%= transaction.ski.city %></p>
+            <p> Vous avez été facturé <%= transaction.ski.price %> € </p>
+          </div>
+        </div>
+        <br>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="list-as-owner ">
+        <h3 class="font-italic">Les skis que vous avez proposé </h3>
+        <% if @earning_transactions.past.empty? %>
+        <p>Personne n'a reservé vos skis pour l'instant 😢</p>
+        <% else %>
+        <% @earning_transactions.past.each do |transaction| %>
+        <div class="card-product">
+          <%= cl_image_tag transaction.ski.photo %>
+          <div class="card-product-infos">
+            <p> "<strong><%= transaction.ski.model %></strong>" loué à <%= transaction.customer.name %> </p>
+            <p> Le <%= transaction.rental_date %> à <%= transaction.ski.city %></p>
+            <p> <%= transaction.customer.name %> vous a réglé <%= transaction.ski.price %> € ✔ </p>
+            <br>
+          </div>
+        </div>
+        <br>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>
+<hr>
