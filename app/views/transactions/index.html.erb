@@ -2,23 +2,23 @@
 
 <div class="container">
 
-  <div class="accordion" id="accordionExample">
+  <div class="accordion" id="accordionTransac">
     <div class="card">
-      <div class="card-header" id="headingOne">
-        <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <p class="mb-0">
+
             Vos locations du jour
-          </button>
-        </h2>
+
+        </p>
       </div>
 
-      <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordionTransac">
 
       <div class="card-body">
         <div class="current-transactions">
           <div class="container-intermediaire">
             <div class="list-as-customer">
-              <h3 class="font-italic">Les skis que vous avez chopé </h3>
+              <h3>Les skis que vous avez chopé </h3>
               <% if @transactions.current.empty? %>
                 <p>Vous n'avez chopé aucun ski 😢</p>
               <% else %>
@@ -35,7 +35,7 @@
               <% end %>
             </div>
             <div class="list-as-owner">
-              <h3 class="font-italic">Les skis que vous avez proposé </h3>
+              <h3>Les skis que vous avez proposé </h3>
               <% if @earning_transactions.current.empty? %>
               <p>Vous n'avez proposé aucun ski à la location 😢</p>
               <% else %>
@@ -57,19 +57,17 @@
       </div>
     </div>
     <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <p class="mb-0">
             Vos réservations
-          </button>
-        </h2>
+        </p>
       </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTransac">
         <div class="card-body">
           <div class="future-transactions accordion">
             <div class="container-intermediaire">
               <div class="list-as-customer">
-                <h3 class="font-italic">Les skis que vous avez reservé </h3>
+                <h3>Les skis que vous avez reservé </h3>
                 <% if @transactions.future.empty? %>
                 <p>Vous n'avez reservé aucun ski 😢</p>
                 <% else %>
@@ -86,7 +84,7 @@
                 <% end %>
               </div>
               <div class="list-as-owner ">
-                <h3 class="font-italic">Les skis que vous allez proposer </h3>
+                <h3>Les skis que vous allez proposer </h3>
                 <% if @earning_transactions.future.empty? %>
                   <p>Personne n'a reservé vos skis pour l'instant 😢</p>
                 <% else %>
@@ -108,20 +106,18 @@
       </div>
     </div>
     <div class="card">
-      <div class="card-header" id="headingThree">
-        <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <p class="mb-0">
             Historique de vos locations
-          </button>
-        </h2>
+        </p>
+
       </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionTransac">
       <div class="card-body">
         <div class="archives-transactions accordion">
-          <br>
           <div class="container-intermediaire">
             <div class="list-as-customer">
-              <h3 class="font-italic">Les skis que vous avez reservé </h3>
+              <h3>Les skis que vous avez reservé </h3>
               <% if @transactions.past.empty? %>
               <p>Vous n'avez j  amais reservé de skis 😢</p>
               <% else %>
@@ -138,7 +134,7 @@
               <% end %>
             </div>
             <div class="list-as-owner ">
-              <h3 class="font-italic">Les skis que vous avez proposé </h3>
+              <h3>Les skis que vous avez proposé </h3>
               <% if @earning_transactions.past.empty? %>
               <p>Personne n'a reservé vos skis pour l'instant 😢</p>
               <% else %>

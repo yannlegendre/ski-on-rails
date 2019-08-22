@@ -15,3 +15,20 @@
 
 }
 
+
+.accordion .btn {
+  color: black;
+}
+
+
+ #accordionTransac .card-header {
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+  }
+  .h2 {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
