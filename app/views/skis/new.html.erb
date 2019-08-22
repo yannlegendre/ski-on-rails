@@ -13,10 +13,10 @@
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
           <div class="form-inputs">
-            <%= f.input :price %>
-            <%= f.input :size %>
-            <%= f.input :model %>
-            <%= f.input :city %>
+            <%= f.input :price, placeholder: 'Prix' %>
+            <%= f.input :size, placeholder: 'Taille'%>
+            <%= f.input :model, placeholder: 'Modèle' %>
+            <%= f.input :city, placeholder: 'Ville'%>
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.button :submit, class: 'rounded btn btn-dark' %>
