@@ -1,7 +1,7 @@
 .container-ski-new {
   background-size: cover;
   background-position: center;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 40px);
 }
 
 #h1-ski-new {
@@ -25,3 +25,7 @@
 .container-ski-new .form-control {
   width: none;
 }
+
+.container-ski-new .file {
+    padding: 0px;
+  }
