@@ -1,36 +1,38 @@
-form {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0px;
-  color: white;
-  font-family: 'Anton', sans-serif;
-  font-weight: bold;
-  label {
-    margin-right: 7px;
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 2;
-    text-align: center;
+.banner {
+  form {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    color: white;
+    font-family: 'Anton', sans-serif;
+    font-weight: bold;
+    label {
+      margin-right: 7px;
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 2;
+      text-align: center;
+    }
+    input {
+      border-radius: 16px;
+      padding: 8px 16px;
+      border: none;
+      font-weight: 100;
+      color: lightgray;
+    }
   }
-  input {
-    border-radius: 16px;
-    padding: 8px 16px;
-    border: none;
-    font-weight: 100;
-    color: lightgray;
+
+  .form-example {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
   }
-}
 
-.form-example {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  margin: 0 auto;
-}
-
-#search-btn {
-  margin-top: 30px;
-  border-radius: 20px;
+  #search-btn {
+    margin-top: 30px;
+    border-radius: 20px;
+  }
 }
 
 
