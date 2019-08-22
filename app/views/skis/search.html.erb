@@ -10,11 +10,19 @@
 
   <form action="<%= skis_path %>" method="get" class="form-example">
     <div class="form-example">
-      <label for="name">Balance ta demande </label>
-      <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Modèle, Ville, Taille de ski">
+      <label for="name"> Modèle de batard </label>
+      <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Modèle">
+    </div>
+      <div class="form-example">
+      <label for="name"> Ville de porc </label>
+      <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Ville">
     </div>
     <div class="form-example">
-      <input type="submit" value="Rechercher">
+      <label for="name"> Une taille bonhomme </label>
+      <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Taille de ski">
+    </div>
+    <div class="form-example">
+      <input type="submit" value="Rechercher" class="btn btn-primary" id="search-btn">
     </div>
   </form>
 </div>
