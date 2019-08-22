@@ -1,7 +1,10 @@
-
+import Rails from 'rails-ujs';
+import 'bootstrap';
 import flatpickr from "flatpickr";
 import 'flatpickr/dist/flatpickr.min.css'
 import { loadDynamicBannerText } from '../components/banner';
+
+Rails.start();
 loadDynamicBannerText();
 
 const calendar = document.querySelector('#calendar')
@@ -12,4 +15,5 @@ flatpickr("#transaction_rental_date",
   disable: JSON.parse(datesBooked),
   dateFormat: "d-m-Y"
 });
+
 
