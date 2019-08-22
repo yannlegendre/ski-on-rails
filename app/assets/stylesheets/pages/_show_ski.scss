@@ -1,5 +1,6 @@
-.image-info {
+.image-show {
   display: flex;
+  // width:1000px;
   img {
     border-radius: 10px;
     margin: 0 auto;
@@ -10,3 +11,7 @@
     font-weight: bold;
     font-style: italic;
   }
+
+.show-content {
+  padding-left: 156px;;
+}

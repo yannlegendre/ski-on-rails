@@ -1,40 +1,33 @@
-<h1>Vous êtes dans show html (ski)</h1>
 <div class="container">
-
-
-    <!-- <img src="http://www.cluster-cim.fr/upload/choisir-ses-skis.jpg" /> -->
-    <div class="image-info">
-      <%= cl_image_tag @ski.photo, height: 450 %>
+    <h1>Votre produit en détails</h1>
+    <div class="content-show">
     </div>
-      <h2><%= @ski.model %></h2>
-      <h4> <%= @ski.size %> </h4>
-
-
-      <h4> <%= @ski.city %> </h4>
-      <h4> <%= @ski.owner.name %> </h4>
-
-        <p>Ski très adapté pour faire </p>
-
-      <h2 class="card-trip-pricing"><%= @ski.price %>€</h2>
-
-
-
-
-  <!-- ajout du formulaire pour la transaction  -->
-  <div class="container-form-show">
-    <%= simple_form_for [@ski, @transaction] do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-      <div class="form-inputs" id="calendar" data-dates-booked = "<%=
-      @ski.dates_booked %>">
-        <%= f.input :rental_date, as: :string, placeholder: "Choisissez une date"%>
-      </div>
-      <div>
-        <div class="form-actions">
-          <%= f.button :submit,'Réserver ce ski', class: "btn  btn-primary"  %>
-        </div>
-      </div>
-    <% end  %>
+  <div class="image-show">
+  <%= cl_image_tag @ski.photo, height: 500, width: 800 %>
   </div>
+
+    <div class="show-content">
+      <div>
+        <h2><%= @ski.model %></h2>
+                <h4> <%= @ski.size %> </h4>
+                <h4> <%= @ski.city %> </h4>
+                <h4> <%= @ski.owner.name %> </h4>
+                <p>Skieur intermédiare </p>
+                <h2><%= @ski.price %>€</h2>
+      </div>
+         <div class="form-show">
+    <%= simple_form_for [@ski, @transaction] do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+      <div class="form-inputs w-25" id="calendar" data-dates-booked = "<%=
+        @ski.dates_booked %>">
+          <%= f.input :rental_date, as: :string, placeholder: "Choisissez une date"%>
+      </div>
+        <div class="form-actions">
+          <%= f.button :submit,'Réserver ce ski', class: "btn btn-primary"  %>
+          </div>
+      <% end %>
+       </div>
+    </div>
 </div>
