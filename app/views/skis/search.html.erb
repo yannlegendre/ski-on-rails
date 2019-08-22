@@ -9,6 +9,15 @@
   <%= link_to "Nos skis", skis_path, class: "btn btn-primary btn-lg"%>
   </div>
 
+  <form action="<%= skis_path %>" method="get" class="form-example">
+    <div class="form-example">
+      <label for="name">Balance ta demande </label>
+      <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Modèle, Ville, Taille de ski">
+    </div>
+    <div class="form-example">
+      <input type="submit" value="Rechercher">
+    </div>
+  </form>
 </div>
 
 <div class="footer">

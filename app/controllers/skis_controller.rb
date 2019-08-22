@@ -3,9 +3,20 @@ class SkisController < ApplicationController
   def search
   end
 
+  # GET /skis
   def index
-    #before we create the actual form, we test the filtering thing "a la mano"
-    @skis = Ski.all
+      @skis = Ski.all
+    # before we create the actual form, we test the filtering thing "a la mano"
+    if params[:query].present?
+      @skis = @skis.global_search(params[:query])
+    else
+      @skis = Ski.all
+    end
+
+    # if params[:rental_date].present?
+    #   @skis = @skis.joins(:transactions).where(transactions: { rental_date: 2.days.ago..5.days.from_now}) )
+    # end
+
     # where.(city: 'Lyon').sort_by { |ski| ski.size }
   end
 
