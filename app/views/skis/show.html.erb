@@ -2,23 +2,22 @@
 <div class="container">
 
 
-  <p> <%= @ski.model %></p>
-
-  <div class="card-trip">
     <!-- <img src="http://www.cluster-cim.fr/upload/choisir-ses-skis.jpg" /> -->
-    <%= cl_image_tag @ski.photo, height: 400, width: 1100, crop: :fill %>
-    <div class="card-trip-infos">
-      <div>
-        <h2><%= @ski.model %></h2>
-        <h4> <%= @ski.city %> </h4>
-        <h4> <%= @ski.size %> </h4>
-        <h4> <%= @ski.owner.name %> </h4>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem aperiam, magni eius sapiente voluptates quisquam amet. Pariatur harum suscipit, odio adipisci molestias perspiciatis itaque deserunt rerum repellendus quidem, explicabo ad.</p>
-      </div>
-      <h2 class="card-trip-pricing"><%= @ski.price %>€</h2>
+    <div class="image-info">
+      <%= cl_image_tag @ski.photo, height: 450 %>
     </div>
-  </div>
+      <h2><%= @ski.model %></h2>
+      <h4> <%= @ski.size %> </h4>
+
+
+      <h4> <%= @ski.city %> </h4>
+      <h4> <%= @ski.owner.name %> </h4>
+
+        <p>Ski très adapté pour faire </p>
+
+      <h2 class="card-trip-pricing"><%= @ski.price %>€</h2>
+
+
 
 
   <!-- ajout du formulaire pour la transaction  -->
