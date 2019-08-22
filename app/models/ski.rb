@@ -11,18 +11,14 @@ class Ski < ApplicationRecord
   validates :size, presence: true, numericality: { only_integer: true }
   validates :city, presence: true
 
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [:city, :size, :model],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
   def dates_booked
     transactions.pluck(:rental_date).to_json
   end
-
-  # def dates_booked
-  #   res = transactions.map do |transaction|
-  #     transaction.rental_date
-  #   end
-  #   res.to_json
-
-  #   transactions.map(rental_date).to_json
-  # end
 end
-# array.map {|e| e.method }
-# array.map(&:method)
