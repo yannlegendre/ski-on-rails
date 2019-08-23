@@ -3,6 +3,13 @@ import 'bootstrap';
 import flatpickr from "flatpickr";
 import 'flatpickr/dist/flatpickr.min.css'
 import { loadDynamicBannerText } from '../components/banner';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from '../plugins/init_mapbox';
+
+const map = document.querySelector('#map');
+if (map) {
+  initMapbox();
+}
 
 Rails.start();
 
