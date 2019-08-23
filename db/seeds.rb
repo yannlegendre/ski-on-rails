@@ -26,11 +26,15 @@ PhotoUploader::IMG_IDS.each do |img_id|
   model = "#{MARQUES.sample} #{MODELES.sample} #{rand(2000..2021)}, #{ETATS.sample}"
   size = rand(155..190)
   city = ['Lyon', 'Milano', 'Venissieux', 'Courchevel', 'Tignes', 'Val d\'Isere'].sample
-  Ski.create!(photo: photo, price: price, model: model, size: size, owner: owner, city: city)
+  a = Ski.new(photo: photo, price: price, model: model, size: size, owner: owner, city: city)
+  a.geocode
+  a.save
 end
-ski_de_jojo = Ski.create!(photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566297127/oqfq05zqijac0gidglyc.jpg"),
+ski_de_jojo = Ski.new(photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566297127/oqfq05zqijac0gidglyc.jpg"),
               price: 25, model: 'Le bon ski custom du jojo, état de ouf',
               size: 150, owner: jojo, city: 'Lyon')
+ski_de_jojo.geocode
+ski_de_jojo.save
 
 p 'Skis created'
 
