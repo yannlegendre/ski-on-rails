@@ -5,29 +5,28 @@
     <div class="ski-text">
      <p>La meilleure façon de louer vos <span id="banner-typed-text"></span></p>
     </div>
-  </div>
 
-  <form action="<%= skis_path %>" method="get" class="form-search-global">
-    <div class="search-form">
-      <label for="name"> </label>
-      <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Modèle">
-    </div>
-    <select class="search-form">
-      <option value="">Ville</option>
-      <% @cities.each do |city| %>
-        <option value="<%= params[:query] %>"><%=city %></option>
-      <% end %>
-    </select>
-    <div class="search-form">
-      <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Taille de ski">
-    </div>
-    <div class="search-form">
-      <input type="date" value="Rechercher" name="rental_date" value="<%= params[:rental_date] %>" placeholder="Date">
-    </div>
-    <div class="search-form">
-      <input type="submit" value="Rechercher" class="btn btn-primary" id="search-btn">
-    </div>
-  </form>
+    <form action="<%= skis_path %>" method="get" class="form-search-global">
+      <div class="search-form">
+        <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Modèle">
+      </div>
+      <select class="search-form">
+        <option value="">Ville</option>
+        <% @cities.each do |city| %>
+          <option value="<%= params[:query] %>"><%=city %></option>
+        <% end %>
+      </select>
+      <div class="search-form">
+        <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Taille de ski">
+      </div>
+      <div class="search-form">
+        <input type="date" value="Rechercher" name="rental_date" value="<%= params[:rental_date] %>" placeholder="Date">
+      </div>
+      <div class="search-form">
+        <input type="submit" value="Rechercher" class="btn btn-primary" id="search-btn">
+      </div>
+    </form>
+  </div>
 </div>
 
 <div class="footer">
