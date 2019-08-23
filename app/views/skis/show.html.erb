@@ -14,7 +14,7 @@
       <h4>Ville de : <%= @ski.city %> </h4>
       <h4>Propriétaire : <%= @ski.owner.name %> </h4>
       <p><em>L'avis du propriétaire: ces skis possèdent  une bonne <br> accroche,  ils sont polyvalents et donnent une bonne relance</em>.</p>
-      <h2 class="prix"><%= @ski.price %>€</h2>
+      <h2 class="prix"><%= @ski.price %>€ / j</h2>
 
       <div class="form-show">
         <%= simple_form_for [@ski, @transaction] do |f| %>
