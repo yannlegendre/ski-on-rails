@@ -11,6 +11,10 @@ class SkisController < ApplicationController
       @skis = @skis.global_search(params[:query])
     end
 
+    # (Date.parse(params[:rental_date]) => correspond a la date
+    #   dans la method scope.available_at dans le model ski
+    # pour que ca la marche il faut que le params[:rental_date] soit un string
+    # et par le parse on le met en objet
     if params[:rental_date].present?
       @skis = @skis.available_at(Date.parse(params[:rental_date]))
     end

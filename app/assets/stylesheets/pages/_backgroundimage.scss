@@ -2,6 +2,10 @@ body.skis.search {
   background: url('background_image.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-size: 100vh - 100px;
+  height: 100vh;
   -o-background-size: cover;
+}
+
+.banner-search {
+  background-image: 100vh;
 }
