@@ -1,6 +1,24 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.skis.search, .skis.new {
+  .navbar-lewagon {
+    position: fixed;
+    background: transparent;
+    left: 0;
+    right: 0;
+    border-bottom: none;
+
+    .nav-link {
+      color: #eee;
+      font-weight: 400;
+    }
+  }
+
+
 }
 
 .navbar-lewagon .navbar-collapse {
