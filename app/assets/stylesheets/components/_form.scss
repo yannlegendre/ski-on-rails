@@ -27,14 +27,12 @@
       background-color: transparent;
     }
     input, :focus {
-
-
       outline: none;
     }
 
     select {
       font-size: 20px;
-      padding: 2px;
+      padding: 7px;
     }
 
     select:focus {
@@ -54,7 +52,8 @@
   #search-btn {
     border: solid 2px white;
     border-radius: 20px;
-    padding: 6px;
+    padding: 6px 14px;
+    width: 150px;
      &:hover {
       color: #53B0B5;
       font-weight: bold;
@@ -67,7 +66,7 @@
 
   .form-search-global {
     margin-top: 200px;
-    margin-right: 200px;
+    margin-left: -15px;
   }
   ::-webkit-input-placeholder {
   color: white;
