@@ -1,30 +1,30 @@
 
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "carousel1.jpg", alt: "alttext" %>);">
+<div class="banner banner-search" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "carousel1.jpg", alt: "alttext" %>);">
   <div class="container">
     <div class="ski-text">
      <p>La meilleure façon de louer vos <span id="banner-typed-text"></span></p>
     </div>
   </div>
 
-  <form action="<%= skis_path %>" method="get" class="form-example">
-    <div class="form-example">
-      <label for="name"> Modèle de batard </label>
+  <form action="<%= skis_path %>" method="get" class="form-search-global">
+    <div class="search-form">
+      <label for="name"> </label>
       <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Modèle">
     </div>
-      <div class="form-example">
-      <label for="name"> Ville de porc </label>
-      <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Ville">
+      <div class="search-form">
+      <label for="name"> </label>
+      <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Ville" color: blue;>
     </div>
-    <div class="form-example">
-      <label for="name"> Une taille bonhomme </label>
+    <div class="search-form">
+      <label for="name"> </label>
       <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Taille de ski">
     </div>
-    <div class="form-example">
-       <label for="name"> Une date </label>
-      <input type="date" value="Rechercher" name="rental_date" value="<%= p params[:rental_date] %>">
+    <div class="search-form">
+       <label for="name"> </label>
+      <input type="date" value="Rechercher" name="rental_date" value="<%= params[:rental_date] %>" placeholder="jj/mm/aaaa">
     </div>
-    <div class="form-example">
+    <div class="search-form">
       <input type="submit" value="Rechercher" class="btn btn-primary" id="search-btn">
     </div>
   </form>
