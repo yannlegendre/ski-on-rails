@@ -2,7 +2,6 @@
 
 <div class="max-container">
   <div class="container-index-ski">
-
       <div class="cards-index">
         <% @skis.each do |ski| %>
             <div class="card-trip">
@@ -10,7 +9,7 @@
               <%= cl_image_tag ski.photo, width: 600, crop: :fill %>
               <div class="card-trip-infos">
                 <div>
-                  <p class="size"><strong><%= ski.size %> cm</strong></p>
+                  <p class="size"><strong><%= ski.size %> cm</strong> à <%= ski.city %></p>
                   <p class="model"><%= ski.model %></ <p>
 
                 </div>

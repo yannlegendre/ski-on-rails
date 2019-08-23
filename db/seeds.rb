@@ -25,7 +25,7 @@ PhotoUploader::IMG_IDS.each do |img_id|
   owner = User.all.sample
   model = "#{MARQUES.sample} #{MODELES.sample} #{rand(2000..2021)}, #{ETATS.sample}"
   size = rand(155..190)
-  city = ['Villeurbanne','Bron', 'Courchevel', 'Tignes', 'Val d\'Isere'].sample
+  city = ['Villeurbanne','Bron', 'Oullins', 'Limonest'].sample
   a = Ski.new(photo: photo, price: price, model: model, size: size, owner: owner, city: city)
   a.geocode
   a.save
