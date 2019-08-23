@@ -8,22 +8,20 @@
 
 
 .container-index-ski {
-  display: flex;
-  justify-content:space-around;
-  margin: 40px, 0px, 40px, 5px;
+  margin: 10px, 0px, 40px, 5px;
   padding:0;
   // margin-left: 8px;
   // margin-right: 8px;
 
 }
 
-.container-index-ski .bigrow {
-  flex-grow: 1 1;
-}
+// .container-index-ski {
+//   flex-grow: 1 1;
+// }
 
 
 .container-index-ski #map {
-  height: 100vh;
+  height: 74vh;
   position: sticky;
   top: 0;
 }
