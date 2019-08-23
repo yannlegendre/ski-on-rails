@@ -11,13 +11,22 @@
 
   .card-product {
     width: 520px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
   }
 
 }
 
 
-.accordion .btn {
-  color: black;
+#accordionTransac {
+  h3 {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .btn {
+    color: black;
+  }
 }
 
 
@@ -25,10 +34,5 @@
   &:hover {
     background-color: rgba(0, 0, 0, 0.02);
     cursor: pointer;
-  }
-  .h2 {
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 16px;
   }
 }
