@@ -25,35 +25,36 @@ PhotoUploader::IMG_IDS.each do |img_id|
   owner = User.all.sample
   model = "#{MARQUES.sample} #{MODELES.sample} #{rand(2000..2021)}, #{ETATS.sample}"
   size = rand(155..190)
-  city = ['Lyon', 'Milano', 'Venissieux', 'Courchevel', 'Tignes', 'Val d\'Isere'].sample
+  city = ['Villeurbanne','Bron', 'Courchevel', 'Tignes', 'Val d\'Isere'].sample
   a = Ski.new(photo: photo, price: price, model: model, size: size, owner: owner, city: city)
   a.geocode
   a.save
 end
-ski_de_jojo = Ski.new(photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566297127/oqfq05zqijac0gidglyc.jpg"),
-              price: 25, model: 'Le bon ski custom du jojo, état de ouf',
-              size: 150, owner: jojo, city: 'Lyon')
-ski_de_jojo.geocode
-ski_de_jojo.save
+# ski_de_jojo = Ski.new(photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566297127/oqfq05zqijac0gidglyc.jpg"),
+#               price: 25, model: 'Le bon ski custom du jojo, état de ouf',
+#               size: 150, owner: jojo, city: 'Lyon')
+# ski_de_jojo.geocode
+# ski_de_jojo.save
 
 p 'Skis created'
 
-Transaction.create!(ski: Ski.all.sample, customer: User.all.sample, rental_date: 3.days.from_now)
-Transaction.create!(ski: Ski.all.sample, customer: User.all.sample, rental_date: 4.days.from_now)
-Transaction.create!(ski: Ski.all.sample, customer: User.all.sample, rental_date: 5.days.from_now)
+# Transaction.create!(ski: Ski.all.sample, customer: User.all.sample, rental_date: 3.days.from_now)
+# Transaction.create!(ski: Ski.all.sample, customer: User.all.sample, rental_date: 4.days.from_now)
+# Transaction.create!(ski: Ski.all.sample, customer: User.all.sample, rental_date: 5.days.from_now)
 
 
 #jojo a loué des  skis à qqun
 Transaction.create!(ski: Ski.all.sample, customer: jojo, rental_date: 30.days.ago)
 Transaction.create!(ski: Ski.all.sample, customer: jojo, rental_date: 20.days.ago)
-Transaction.create!(ski: Ski.all.sample, customer: jojo, rental_date: 20.days.ago)
+Transaction.create!(ski: Ski.all.sample, customer: jojo, rental_date: 10.days.ago)
+Transaction.create!(ski: Ski.all.sample, customer: jojo, rental_date: 100.days.from_now)
 
 
-#on a loué les skis de jojo
-Transaction.create!(ski: ski_de_jojo, customer: User.all.sample, rental_date: 40.days.ago)
-Transaction.create!(ski: ski_de_jojo, customer: User.all.sample, rental_date: 45.days.ago)
-Transaction.create!(ski: ski_de_jojo, customer: User.all.sample, rental_date: 46.days.ago)
-Transaction.create!(ski: ski_de_jojo, customer: User.all.sample, rental_date: 47.days.ago)
+# #on a loué les skis de jojo
+# Transaction.create!(ski: ski_de_jojo, customer: User.all.sample, rental_date: 40.days.ago)
+# Transaction.create!(ski: ski_de_jojo, customer: User.all.sample, rental_date: 45.days.ago)
+# Transaction.create!(ski: ski_de_jojo, customer: User.all.sample, rental_date: 46.days.ago)
+# Transaction.create!(ski: ski_de_jojo, customer: User.all.sample, rental_date: 47.days.ago)
 
 
 

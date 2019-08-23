@@ -1,31 +1,36 @@
 <h1><i class="fas fa-skiing"></i> Resultats</h1>
 
-<div class="container-index-ski">
+<div class="max-container">
+  <div class="container-index-ski">
 
-    <div class="cards-index">
-      <% @skis.each do |ski| %>
-          <div class="card-trip">
-            <%= link_to ski_path(ski) do %>
-            <%= cl_image_tag ski.photo, width: 600, crop: :fill %>
-            <div class="card-trip-infos">
-              <div>
-                <p class="size"><strong><%= ski.size %> cm</strong></p>
-                <p class="model"><%= ski.model %></ <p>
+      <div class="cards-index">
+        <% @skis.each do |ski| %>
+            <div class="card-trip">
+              <%= link_to ski_path(ski) do %>
+              <%= cl_image_tag ski.photo, width: 600, crop: :fill %>
+              <div class="card-trip-infos">
+                <div>
+                  <p class="size"><strong><%= ski.size %> cm</strong></p>
+                  <p class="model"><%= ski.model %></ <p>
 
+                </div>
+                  <h2 class="card-trip-pricing"><%= ski.price %>€</h2>
               </div>
-                <h2 class="card-trip-pricing"><%= ski.price %>€</h2>
+              <% end %>
             </div>
-            <% end %>
-          </div>
 
-      <% end %>
-    </div>
+        <% end %>
+      </div>
 
-    <div
-      id="map"
-      style="width: 100%;
-      width: 500px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    ></div>
+  </div>
+
+  <div class="container-index-ski">
+      <div
+        id="map"
+        style="width: 500px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+  </div>
+
 </div>

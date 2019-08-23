@@ -6,16 +6,18 @@ class SkisController < ApplicationController
 
   # GET /skis
   def index
-    @skis = Ski.geocoded
+    # before we create the actual form, we test the filtering thing "a la mano"
+    @skis = Ski.all
+    p params
+    @skis = @skis.where(size: params[:size]) if params[:size].present?
+    @skis = @skis.near(params[:city], 15) if params[:city].present?
+    @skis = @skis.where(model: params[:model]) if params[:model].present?
+
     @markers = @skis.map do |ski|
       {
         lat: ski.latitude,
         lng: ski.longitude
       }
-    end
-    # before we create the actual form, we test the filtering thing "a la mano"
-    if params[:query].present?
-      @skis = @skis.global_search(params[:query])
     end
 
     # (Date.parse(params[:rental_date]) => correspond a la date
@@ -25,8 +27,6 @@ class SkisController < ApplicationController
     if params[:rental_date].present?
       @skis = @skis.available_at(Date.parse(params[:rental_date]))
     end
-
-    # where.(city: 'Lyon').sort_by { |ski| ski.size }
   end
 
   def show
