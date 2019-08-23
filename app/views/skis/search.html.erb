@@ -12,17 +12,17 @@
       <label for="name"> </label>
       <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Modèle">
     </div>
-      <div class="search-form">
-      <label for="name"> </label>
-      <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Ville" color: blue;>
-    </div>
+    <select class="search-form">
+      <option value="">Ville</option>
+      <% @cities.each do |city| %>
+        <option value="<%= params[:query] %>"><%=city %></option>
+      <% end %>
+    </select>
     <div class="search-form">
-      <label for="name"> </label>
       <input type="text" name="query" id="name" value="<%= params[:query] %>" placeholder="Taille de ski">
     </div>
     <div class="search-form">
-       <label for="name"> </label>
-      <input type="date" value="Rechercher" name="rental_date" value="<%= params[:rental_date] %>" placeholder="jj/mm/aaaa">
+      <input type="date" value="Rechercher" name="rental_date" value="<%= params[:rental_date] %>" placeholder="Date">
     </div>
     <div class="search-form">
       <input type="submit" value="Rechercher" class="btn btn-primary" id="search-btn">
