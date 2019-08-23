@@ -3,11 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 12;
-//   a {
-//     &:hover {
-//       text-decoration: none;
-// }
-//   }
+  border-radius: 10px;
 }
 
 .card-trip img {
@@ -19,8 +15,9 @@
 
 .cards-index {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: auto;
+  grid-template-columns: repeat(2, 1fr);
+  margin-right: 3px;
+  // grid-template-rows: auto;
   gap: 16px;
 }
 
