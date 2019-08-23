@@ -74,4 +74,4 @@ gem 'devise'
 gem 'faker'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'pg_search'
-
+gem 'geocoder'
