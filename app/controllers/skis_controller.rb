@@ -5,7 +5,13 @@ class SkisController < ApplicationController
 
   # GET /skis
   def index
-    @skis = Ski.all
+    @skis = Ski.geocoded
+    @markers = @skis.map do |ski|
+      {
+        lat: ski.latitude,
+        lng: ski.longitude
+      }
+    end
     # before we create the actual form, we test the filtering thing "a la mano"
     if params[:query].present?
       @skis = @skis.global_search(params[:query])

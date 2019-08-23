@@ -20,6 +20,12 @@
 
       <% end %>
     </div>
-   <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.346,48.8595,11.72,0,0/600x1000?access_token=pk.eyJ1IjoiYW50aG9ueWxudCIsImEiOiJjanl0dXV4YzAwN2psM2JwOHVwemVnMG9nIn0.JQX_fKXFJ13g0ffTXeOvRw
-      '>
+
+    <div
+      id="map"
+      style="width: 100%;
+      width: 500px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
 </div>
