@@ -1,6 +1,7 @@
 class SkisController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :search, :show]
   def search
+    @cities = Ski.all.map { |ski| ski.city }.uniq
   end
 
   # GET /skis

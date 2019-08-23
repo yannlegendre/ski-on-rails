@@ -2,6 +2,7 @@
   form {
     display: flex;
     justify-content: center;
+    align-items: center;
     color: white;
     font-family: 'Anton', sans-serif;
     font-weight: bold;
@@ -10,7 +11,7 @@
       font-size: 22px;
       text-align: center;
     }
-    input {
+    input, select, .value {
       border-top: transparent;
       border-left: transparent;
       border-right: transparent;
@@ -30,6 +31,17 @@
 
       outline: none;
     }
+
+    select {
+      font-size: 20px;
+      padding: 2px;
+    }
+
+    select:focus {
+      color: black;
+      background-color: white;
+    }
+
   }
 
   .form-example {
@@ -42,6 +54,7 @@
   #search-btn {
     border: solid 2px white;
     border-radius: 20px;
+    padding: 6px;
      &:hover {
       color: #53B0B5;
       font-weight: bold;
