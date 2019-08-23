@@ -1,4 +1,6 @@
 class Ski < ApplicationRecord
+  include PgSearch::Model
+
   mount_uploader :photo, PhotoUploader
 
   belongs_to :owner, class_name: 'User'
@@ -11,7 +13,9 @@ class Ski < ApplicationRecord
   validates :size, presence: true, numericality: { only_integer: true }
   validates :city, presence: true
 
-  include PgSearch::Model
+  geocoded_by :city
+  after_validation :geocode, if: :will_save_change_to_city?
+
   pg_search_scope :global_search,
     against: [:city, :size, :model],
     using: {
