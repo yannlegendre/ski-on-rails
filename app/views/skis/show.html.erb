@@ -1,33 +1,37 @@
-<div class="container">
-    <h1>Votre produit en détails</h1>
-    <div class="content-show">
-    </div>
-  <div class="image-show">
-  <%= cl_image_tag @ski.photo, height: 500, width: 800 %>
-  </div>
+<div class="container-show">
+  <h1 class="titre-show"><em><strong>Détails</strong></em></h1>
 
-    <div class="show-content">
-      <div>
-        <h2><%= @ski.model %></h2>
-                <h4> <%= @ski.size %> </h4>
-                <h4> <%= @ski.city %> </h4>
-                <h4> <%= @ski.owner.name %> </h4>
-                <p>Skieur intermédiare </p>
-                <h2><%= @ski.price %>€</h2>
+  <div class="row">
+    <div class="col-6">
+      <div class ="photoski">
+        <%= cl_image_tag @ski.photo, class: 'image-skis' %>
+
+        <h2 class="sous-titre"><strong><%= @ski.model %></strong></h2>
       </div>
-         <div class="form-show">
-    <%= simple_form_for [@ski, @transaction] do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    </div>
+    <div class="col-6" id ="showpad">
+      <h4>Taille :  <%= @ski.size %>cm </h4>
+      <h4>Ville de : <%= @ski.city %> </h4>
+      <h4>Propriétaire : <%= @ski.owner.name %> </h4>
+      <p><em>L'avis du propriétaire: ces skis possèdent  une bonne <br> accroche,  ils sont polyvalents et donnent une bonne relance</em>.</p>
+      <h2 class="prix"><%= @ski.price %>€</h2>
 
-      <div class="form-inputs w-25" id="calendar" data-dates-booked = "<%=
+      <div class="form-show">
+        <%= simple_form_for [@ski, @transaction] do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs w-25" id="calendar" data-dates-booked = "<%=
         @ski.dates_booked %>">
-          <%= f.input :rental_date, as: :string, placeholder: "Choisissez une date"%>
+        <%= f.input :rental_date, as: :string, placeholder: "Choisissez une date"%>
       </div>
-        <div class="form-actions">
-          <%= f.button :submit,'Réserver ce ski', class: "btn btn-primary"  %>
-          </div>
+      <div class="form-actions">
+        <%= f.button :submit,'Réserver ce ski', class: "btn btn-primary"  %>
+      </div>
       <% end %>
-       </div>
     </div>
+  </div>
 </div>
+</div>
+
+
